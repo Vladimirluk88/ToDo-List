@@ -15,10 +15,10 @@ function App() {
     const createToDo = useCallback((toDo: ToDo) => {
         setStore((prevStore: Store): Store => {
             let newToDoId;
-            if(prevStore.toDos.length > 0) {
-              newToDoId = prevStore.toDos[prevStore.toDos.length - 1]?.id + 1
+            if (prevStore.toDos.length > 0) {
+                newToDoId = prevStore.toDos[prevStore.toDos.length - 1]?.id + 1;
             } else {
-              newToDoId = 0;
+                newToDoId = 0;
             }
             let newToDos = [
                 ...prevStore.toDos,
@@ -48,10 +48,11 @@ function App() {
             };
         });
     }, []);
-    const changeToDo = useCallback((id: number, toDo: ToDoInStore) => {
+    const changeToDo = useCallback((toDo: ToDoInStore) => {
         setStore((prevStore: Store): Store => {
+            console.log(toDo);
             let changedToDo = prevStore.toDos.findIndex(
-                (toDo: ToDoInStore) => toDo.id === id
+                (item: ToDoInStore) => item.id === toDo.id
             );
             let newToDos = [
                 ...prevStore.toDos.slice(0, changedToDo),
@@ -68,7 +69,11 @@ function App() {
     return (
         <div className="App">
             <div className="App__list">
-                <ToDoList toDos={store.toDos} deleteToDo={deleteToDo} changeToDo={changeToDo} />
+                <ToDoList
+                    toDos={store.toDos}
+                    deleteToDo={deleteToDo}
+                    changeToDo={changeToDo}
+                />
             </div>
             <div className="App__create">
                 <ToDoCreate createToDo={createToDo} />
