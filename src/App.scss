@@ -1,7 +1,11 @@
 .App {
   text-align: center;
   display: flex;
-  justify-content: space-between;
+  height: 100vh;
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+  }
 }
 
 .App-logo {
@@ -36,5 +40,40 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.App__hr {
+  margin: 0;
+  height: 100vh;
+  width: 5px;
+  background-color: #61dafb;
+  cursor: pointer;
+  border: none;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+.App__list {
+
+  @media (max-width: 768px) {
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+  }
+  }
+}
+.App__create {
+  width: 50%;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    width: 100%;
   }
 }

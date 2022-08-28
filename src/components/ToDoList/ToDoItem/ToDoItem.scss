@@ -1,0 +1,97 @@
+.ToDo {
+    min-width: 290px;
+    min-height: 100px;
+    border: 2px solid #34c9eb;
+    text-align: left;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+
+    &__waiting {
+        border: 2px solid #89A7A7;
+    }
+    &__pending {
+        border: 2px solid #30C5FF;
+    }
+    &__complete {
+        border: 2px solid #3BB19F;
+    }
+
+    &__title {
+        margin-bottom: 10px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 20px;
+        word-break: break-word;
+    }
+
+    &__description {
+        padding-bottom: 10px;;
+        line-height: 18px;
+        word-break: break-word;
+    }
+
+    &__status {
+
+        &_text {
+            border: none;
+            cursor: pointer;
+        }
+
+        &_waiting {
+            color: #89A7A7;
+        }
+        &_pending {
+            color: #30C5FF;
+        }
+        &_complete {
+            color: #3BB19F;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__button {
+        border: none;
+        position: relative;
+        margin: 2px;
+        background-color: transparent;
+        cursor: pointer;
+
+        &_delete {
+            path {
+                transform: translate(0px, 3px);
+                -webkit-transform: translate(0px, 3px);
+                -moz-transform: translate(0px, 3px);
+                -ms-transform: translate(0px, 3px);
+                -o-transform: translate(0px, 3px);
+            }
+        }
+
+        &_edit {
+            path {
+                transform: translate(0px, -2px);
+                -webkit-transform: translate(0px, -2px);
+                -moz-transform: translate(0px, -2px);
+                -ms-transform: translate(0px, -2px);
+                -o-transform: translate(0px, -2px);
+            }
+        }
+
+        svg {
+            height: 40px;
+            width: 40px;
+        }
+
+        &:hover {
+            svg {
+                fill: #89A7A7;
+            }
+        }
+    }
+}

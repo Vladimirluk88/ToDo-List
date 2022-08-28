@@ -1,0 +1,18 @@
+.ToDoSelect {
+    font-size: 16px;
+    line-height: 16px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+
+    &_waiting {
+        color: #89A7A7;
+    }
+
+    &_pending {
+        color: #30C5FF;
+    }
+
+    &_complete {
+        color: #3BB19F;
+    }
+}
